@@ -1,4 +1,8 @@
 #!/usr/bin/make -f
 
 %:
-	dh $@
+	dh $@ --builddirectory=_build --buildsystem=golang
+
+override_dh_auto_install:
+	# Currently no need for produced binary file(s)
+	dh_auto_install -- --no-binaries
