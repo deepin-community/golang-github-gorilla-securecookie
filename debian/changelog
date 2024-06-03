@@ -1,5 +1,78 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-github-gorilla-securecookie (1.1.2-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream version 1.1.2
+  * Reorder fields in debian/control and debian/copyright
+  * Change Section from devel to golang
+  * Bump debhelper build-dependency to debhelper-compat (= 13)"
+  * Use dh-sequence-golang instead of dh-golang and --with=golang
+  * Invoke dh with --builddirectory=_build
+  * Add build-dependency on golang-github-google-gofuzz-dev
+    and set golang-any (>= 2:1.20~) as per go.mod
+  * Bump Standards-Version to 4.6.2 (no change)
+  * Drop -dev package’s unused dependency on ${shlibs:Depends}
+  * Remove manual "rm -r usr/bin" in override_dh_auto_install
+    as "dh_auto_install -- --no-binaries" does the job already
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Anthony Fok <foka@debian.org>  Fri, 08 Dec 2023 16:07:33 -0700
+
+golang-github-gorilla-securecookie (1.1.1-2) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Update standards version to 4.5.0, no changes needed.
+  * Apply multi-arch hints.
+    + golang-github-gorilla-securecookie-dev: Add Multi-Arch: foreign.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Tue, 29 Nov 2022 00:16:57 +0000
+
+golang-github-gorilla-securecookie (1.1.1-1) unstable; urgency=medium
+
+  [ Alexandre Viau ]
+  * Point Vcs-* urls to salsa.debian.org.
+
+  [ Jelmer Vernooĳ ]
+  * Fix Debian QA group name.
+
+  [ Anthony Fok ]
+  * Adopt package under the Debian Go Packaging Team (Closes: #889239)
+  * New upstream version 1.1.1 (identical to 1.1+git20170224.6.e59506c)
+  * Apply "cme fix dpkg" fixes:
+    - Change Priority from "extra" to "optional"
+    - Update debhelper dependency to "Build-Depends: debhelper-compat (= 12)"
+    - Use secure https protocol for Format field in debian/copyright
+    - Bump Standards-Version to 4.4.1 (no change)
+  * Add "Rules-Requires-Root: no" to debian/control
+  * Add debian/watch to track upstream tarball
+  * Remove "debian-watch-file-is-missing" Lintian override
+  * Simplify override_dh_auto_install with --no-binaries
+  * debian/gbp.conf: Set debian-branch to debian/sid for DEP-14 conformance
+
+ -- Anthony Fok <foka@debian.org>  Mon, 02 Dec 2019 15:05:54 -0700
+
+golang-github-gorilla-securecookie (1.1+git20170224.6.e59506c-4) unstable; urgency=medium
+
+  * Remove Michael Lustfield from Uploaders list.
+
+ -- Michael Lustfield <michael@lustfield.net>  Sat, 03 Feb 2018 12:13:30 -0600
+
+golang-github-gorilla-securecookie (1.1+git20170224.6.e59506c-3) unstable; urgency=medium
+
+  * Oprhaning package.
+
+ -- Michael Lustfield <michael@lustfield.net>  Fri, 02 Feb 2018 23:16:01 -0600
+
+golang-github-gorilla-securecookie (1.1+git20170224.6.e59506c-2) unstable; urgency=medium
+
+  * Maintenance updates:
+    - Standards-Version bump.
+    - Clean up d/watch.
+    - Add Testsuite to d/control.
+
+ -- Michael Lustfield <michael@lustfield.net>  Thu, 28 Sep 2017 01:38:16 -0500
+
+golang-github-gorilla-securecookie (1.1+git20170224.6.e59506c-1) unstable; urgency=medium
+
+  * Initial release (Closes: #859038)
+
+ -- Michael Lustfield <michael@lustfield.net>  Wed, 29 Mar 2017 21:54:18 -0500
